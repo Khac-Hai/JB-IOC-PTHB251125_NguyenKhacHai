@@ -1,3 +1,4 @@
+create database ktrathuchanhcuoimodule;
 create schema bailam;
 set search_path to bailam;
 -- Tạo bảng Customer
@@ -224,4 +225,5 @@ begin
     VALUES(p_booking_id,p_payment_method,p_payment_date,p_payment_amount);
 end;
 $$;
+
 call add_payment(p_booking_id := '5',p_payment_method := 'Cash',p_payment_date := '2025-03-23',p_payment_amount := '1000');
