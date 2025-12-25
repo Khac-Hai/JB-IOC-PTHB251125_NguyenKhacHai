@@ -119,7 +119,7 @@ having count(distinct room_id) >=2 ;
 select r.room_id,r.room_type,r.room_price,count(distinct booking_id)
 from Room r join Booking B on r.room_id = B.room_id
 group by r.room_id,r.room_type,r.room_price
-having count(distinct booking_id) >=3;
+having count(distinct customer_id) >=3;
 
 --12. (5 điểm) Lấy danh sách các khách hàng có tổng số tiền đã thanh toán lớn hơn 1000, gồm mã khách hàng, họ tên khách hàng, mã phòng, tổng số tiền đã thanh toán.
 select c.customer_id,c.customer_full_name,B.room_id,sum(P.payment_amount)
@@ -227,3 +227,4 @@ end;
 $$;
 
 call add_payment(p_booking_id := '5',p_payment_method := 'Cash',p_payment_date := '2025-03-23',p_payment_amount := '1000');
+
